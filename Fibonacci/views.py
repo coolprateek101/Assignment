@@ -3,7 +3,7 @@ import time
 
 def test2(request):
     if request.method == 'POST':
-        start = time.clock()
+        start = time.time()
         nth=request.POST.get('number')
         input=nth
         nth=int(nth)
@@ -30,7 +30,7 @@ def test2(request):
         print(arr)
         nth_term=arr[len(arr)-1]
         print(nth_term)
-        a=time.clock() - start
+        a=time.time() - start
         print(a)
 
         return render(request, 'Test.html', {'nth_term': nth_term,"input":input,"a":a})
